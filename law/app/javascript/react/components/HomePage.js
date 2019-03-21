@@ -40,8 +40,8 @@ class HomePage extends Component {
   handleSubmit(event) {
   event.preventDefault()
   let formPayload = {
-    firstName: this.state.firstName,
-    lastName: this.state.lastName,
+    first_name: this.state.firstName,
+    last_name: this.state.lastName,
     message: this.state.message,
     email: this.state.email
     }
