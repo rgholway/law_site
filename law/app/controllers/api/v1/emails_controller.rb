@@ -4,12 +4,11 @@ class Api::V1::EmailsController < ApplicationController
   end
 
   def create
-    binding.pry
-    @email = Email.new(email_params)
+    @email = Email.create(first_name: email_params[:first_name], last_name: email_params[:last_name], email: email_params[:email], message: email_params[:message])
   end
 
   private
   def email_params
-    params.require(:firstName, :lastName, :email, :message)
+    params.permit(:first_name, :last_name, :email, :message)
   end
 end
